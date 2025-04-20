@@ -47,3 +47,25 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# Self-Referential Relationship (for department hierarchy)
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+    head = models.ForeignKey(
+        Teacher,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='headed_departments'
+    )
+    parent_department = models.ForeignKey(
+        'self',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='sub_departments'
+    )
+
+    def __str__(self):
+        return self.name
