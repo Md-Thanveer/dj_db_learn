@@ -22,3 +22,15 @@ class TeacherProfile(models.Model):
         return f"Profile of {self.teacher.name}"
 
 
+# One-to-Many (ForeignKey) Relationship
+class Course(models.Model):
+    title = models.CharField(max_length=200)
+    teacher = models.ForeignKey(
+        Teacher,
+        on_delete=models.CASCADE,
+        related_name='courses'
+    )
+    code = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return self.title
