@@ -34,3 +34,16 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+
+# Many-to-Many Relationship
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    courses = models.ManyToManyField(
+        Course,
+        related_name='students'
+    )
+
+    def __str__(self):
+        return self.name
