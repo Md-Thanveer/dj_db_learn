@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-=kzqb#d6u@^y9y&xqnh%f8k_xs!4k9c4*@k7+ch+mnv7l@xpc)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'https://dj-db-learn.onrender.com',
+]
 
 
 # Application definition
