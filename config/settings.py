@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from django.conf.global_settings import CSRF_TRUSTED_ORIGINS
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,9 +30,12 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'https://dj-db-learn.onrender.com',
+    'dj-db-learn.onrender.com'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://dj-db-learn.onrender.com"
+]
 
 # Application definition
 
