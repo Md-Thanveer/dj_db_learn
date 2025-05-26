@@ -41,9 +41,14 @@ CORS_ALLOWED_ORIGINS = [
     "https://dj-db-learn.onrender.com",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://dj-db-learn.onrender.com",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
